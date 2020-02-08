@@ -30,8 +30,8 @@ class ElasticsearchAdapter extends AbstractNosqlAdapter {
 
   /**
    * Get physical Elastic index name; since 7.x we're adding an entity name to get real index: vue_storefront_catalog_product, vue_storefront_catalog_category and so on
-   * @param {*} baseIndexName 
-   * @param {*} config 
+   * @param {*} baseIndexName
+   * @param {*} config
    */
   getPhysicalIndexName(collectionName, config) {
     if (parseInt(config.elasticsearch.apiVersion) >= 6) {
@@ -43,8 +43,8 @@ class ElasticsearchAdapter extends AbstractNosqlAdapter {
 
   /**
    * Get physical Elastic type name; since 7.x index can have one type _doc
-   * @param {*} baseIndexName 
-   * @param {*} config 
+   * @param {*} baseIndexName
+   * @param {*} config
    */
   getPhysicalTypeName(collectionName, config) {
     if (parseInt(config.elasticsearch.apiVersion) >= 6) {
@@ -52,7 +52,7 @@ class ElasticsearchAdapter extends AbstractNosqlAdapter {
     } else {
       return collectionName
     }
-  }  
+  }
 
   /**
    * Close the nosql database connection - abstract to the driver
@@ -65,7 +65,7 @@ class ElasticsearchAdapter extends AbstractNosqlAdapter {
    * Get documents
    * @param collectionName collection name
    * @param query query object
-  */  
+  */
   getDocuments(collectionName, queryBody) {
     return new Promise((resolve, reject) => {
       const searchQueryBody = {
@@ -102,7 +102,7 @@ class ElasticsearchAdapter extends AbstractNosqlAdapter {
 
       }
     }
-    if (parseInt(this.config.elasticsearch.apiVersion) < 6)
+    if (parseInt(this.config.elasticsearch.apiVersion) < 7)
       updateRequestBody.type = this.getPhysicalTypeName(collectionName, this.config)
 
     this.db.update(updateRequestBody, function (error, response) {
@@ -204,7 +204,7 @@ class ElasticsearchAdapter extends AbstractNosqlAdapter {
         keepAlive: true,
         maxSockets: 10,
         minSockets: 10,
-        requestTimeout: 1800000,        
+        requestTimeout: 1800000,
 
         createNodeAgent: function (connection, config) {
           if (connection.useSsl) {

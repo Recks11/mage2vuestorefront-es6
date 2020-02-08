@@ -30,13 +30,13 @@ module.exports = {
   },
 
   magento: {
-    url: process.env.MAGENTO_URL || 'http://magento2.demo-1.divante.pl/rest/',
-    consumerKey: process.env.MAGENTO_CONSUMER_KEY || 'alva6h6hku9qxrpfe02c2jalopx7od1q',
-    consumerSecret: process.env.MAGENTO_CONSUMER_SECRET || '9tgfpgoojlx9tfy21b8kw7ssfu2aynpm',
-    accessToken: process.env.MAGENTO_ACCESS_TOKEN || 'rw5w0si9imbu45h3m9hkyrfr4gjina8q',
-    accessTokenSecret: process.env.MAGENTO_ACCESS_TOKEN_SECRET || '00y9dl4vpxgcef3gn5mntbxtylowjcc9',
+    url: process.env.MAGENTO_URL || 'https://magento-357085-1109433.cloudwaysapps.com/rest',
+    consumerKey: process.env.MAGENTO_CONSUMER_KEY || 'b4izifioyy94odoe8upd20dmmqbyyo7z',
+    consumerSecret: process.env.MAGENTO_CONSUMER_SECRET || 'v6tv2wn52t87hxce0biqr5g5qavggi4b',
+    accessToken: process.env.MAGENTO_ACCESS_TOKEN || 'h0vq11ij8q3r5fjosrrihdxr2upo0ekf',
+    accessTokenSecret: process.env.MAGENTO_ACCESS_TOKEN_SECRET || 'm2eyx9hlkmfa2wg5koo8u1regbk4u0gq',
     storeId: process.env.MAGENTO_STORE_ID || 1,
-    currencyCode: process.env.MAGENTO_CURRENCY_CODE || 'USD',
+    currencyCode: process.env.MAGENTO_CURRENCY_CODE || 'GBP',
     msi: { enabled: process.env.MAGENTO_MSI_ENABLED || false, stockId: process.env.MAGENTO_MSI_STOCK_ID || 1 }
   },
 
@@ -61,7 +61,7 @@ module.exports = {
   },
 
   elasticsearch: {
-    apiVersion: process.env.ELASTICSEARCH_API_VERSION || '5.6'
+    apiVersion: process.env.ELASTICSEARCH_API_VERSION || '6.5'
   },
 
   redis: {
