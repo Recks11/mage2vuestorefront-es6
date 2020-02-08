@@ -102,7 +102,7 @@ class ElasticsearchAdapter extends AbstractNosqlAdapter {
 
       }
     }
-    if (parseInt(this.config.elasticsearch.apiVersion) < 6)
+    if (parseInt(this.config.elasticsearch.apiVersion) < 7)
       updateRequestBody.type = this.getPhysicalTypeName(collectionName, this.config)
 
     this.db.update(updateRequestBody, function (error, response) {
